@@ -172,7 +172,7 @@ function gameOver() {
 
     playSound(3, 500);
 
-    // Show the game-over modal
+    // Show the overlay
     $("#gameOverMessage").text(`Game Over! Your Score: ${score}`);
     $("#gameOverModal").fadeIn();
 
@@ -180,7 +180,7 @@ function gameOver() {
     gameStarted = false;
 }
 
-// Close the modal when the "Close" button is clicked
+// Close the overlay
 $("#closeModal").click(() => {
     $("#gameOverModal").fadeOut();
 });
@@ -198,7 +198,7 @@ function updateScore() {
     $("#currentScore").text(score);
 }
 
-// Start or restart the game when the button is clicked
+// Start 
 $("#startButton").click(() => {
     if (!gameStarted) {
         gameStarted = true;
@@ -210,15 +210,17 @@ $("#startButton").click(() => {
     }
 });
 
+// Reset button
 $(document).ready(() => {
     $("#startButton").text("Start"); 
 });
 
-// Close the modal when the "Close" button is clicked
+// Gameover Overlay
 $("#closeModal").click(() => {
     $("#gameOverModal").fadeOut();
 });
 
+// Mute button
 $("#muteButton").click(() => {
     isMuted = !isMuted;
     $("#muteButton").text(isMuted ? "🔇" : "🔊"); // Update button text
